@@ -1,0 +1,48 @@
+# OpenAPI Generation Rules
+
+1. Keep It Simple
+- Generate only what we need, not everything possible
+- Focus on core functionality first
+- Avoid over-engineering and premature abstraction
+
+2. Class Generation Guidelines
+- Use modern ES classes
+- Keep inheritance shallow (max 1 level deep)
+- Prefer composition over inheritance
+- Generate TypeScript for better type safety
+
+3. API Handling
+- Handle inconsistencies gracefully
+- Don't try to normalize everything
+- Accept that the API may have quirks
+- Document known inconsistencies
+
+4. Code Organization
+- Keep generated code separate from hand-written code
+- Use clear namespacing
+- Maintain a clean separation of concerns
+
+5. Refactoring Guidelines
+- Resist the urge to refactor generated code
+- If refactoring is needed, do it in small, controlled steps
+- Document any manual changes to generated code
+- Consider regeneration impact before modifications
+
+6. Testing Approach
+- Focus on integration tests over unit tests for generated code
+- Test the actual API behavior, not implementation details
+- Keep test fixtures simple and focused
+
+7. Version Control
+- Commit generated code separately from manual changes
+- Use clear commit messages for regeneration
+- Track generator configuration changes carefully
+
+8. Distribution Guidelines
+- Provide a pre-compiled static library
+- Include both ESM and CommonJS bundles
+- Ship with TypeScript type definitions
+- Keep the bundle size minimal
+- Include only essential runtime dependencies
+
+Remember: The goal is maintainable, functional code - not perfect code.

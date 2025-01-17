@@ -1,0 +1,23 @@
+{
+  "name": "gong-js",
+  "version": "1.0.0",
+  "description": "Gong API client generated from OpenAPI spec",
+  "type": "module",
+  "main": "dist/index.js",
+  "scripts": {
+    "generate": "openapi-generator-cli generate -i openapi.json -g typescript-axios -o src/generated -c generator-config.json",
+    "build": "tsc",
+    "clean": "rm -rf src/generated/*"
+  },
+  "keywords": ["gong", "api", "client"],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@openapitools/openapi-generator-cli": "^2.7.0",
+    "typescript": "^5.0.0",
+    "@types/node": "^20.0.0"
+  },
+  "dependencies": {
+    "axios": "^1.4.0"
+  }
+}

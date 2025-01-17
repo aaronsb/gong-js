@@ -1,0 +1,14 @@
+{
+  "supportsES6": true,
+  "modelPropertyNaming": "camelCase",
+  "enumPropertyNaming": "UPPERCASE",
+  "useSingleRequestParameter": true,
+  "withSeparateModelsAndApi": true,
+  "apiPackage": "api",
+  "modelPackage": "models",
+  "npmName": "gong-js",
+  "npmVersion": "1.0.0",
+  "snapshot": false,
+  "nullSafeAdditionalProps": true,
+  "withInterfaces": true
+}
