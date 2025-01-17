@@ -41,15 +41,15 @@ export const CoachingApiAxiosParamCreator = function (configuration?: Configurat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listUsers1: async (workspaceId: number, managerId: number, from: string, to: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        _1: async (workspaceId: number, managerId: number, from: string, to: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'workspaceId' is not null or undefined
-            assertParamExists('listUsers1', 'workspaceId', workspaceId)
+            assertParamExists('_1', 'workspaceId', workspaceId)
             // verify required parameter 'managerId' is not null or undefined
-            assertParamExists('listUsers1', 'managerId', managerId)
+            assertParamExists('_1', 'managerId', managerId)
             // verify required parameter 'from' is not null or undefined
-            assertParamExists('listUsers1', 'from', from)
+            assertParamExists('_1', 'from', from)
             // verify required parameter 'to' is not null or undefined
-            assertParamExists('listUsers1', 'to', to)
+            assertParamExists('_1', 'to', to)
             const localVarPath = `/v2/coaching`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -113,10 +113,10 @@ export const CoachingApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listUsers1(workspaceId: number, managerId: number, from: string, to: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CoachingMetrics>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.listUsers1(workspaceId, managerId, from, to, options);
+        async _1(workspaceId: number, managerId: number, from: string, to: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CoachingMetrics>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator._1(workspaceId, managerId, from, to, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['CoachingApi.listUsers1']?.[localVarOperationServerIndex]?.url;
+            const localVarOperationServerBasePath = operationServerMap['CoachingApi._1']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     }
@@ -132,12 +132,12 @@ export const CoachingApiFactory = function (configuration?: Configuration, baseP
         /**
          * List all of the coaching metrics of a manager.  When accessed through a Bearer token authorization method, this endpoint requires the scope \'api:coaching:read\'.
          * @summary List all coaching metrics (/v2/coaching)
-         * @param {CoachingApiListUsers1Request} requestParameters Request parameters.
+         * @param {CoachingApi1Request} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listUsers1(requestParameters: CoachingApiListUsers1Request, options?: RawAxiosRequestConfig): AxiosPromise<CoachingMetrics> {
-            return localVarFp.listUsers1(requestParameters.workspaceId, requestParameters.managerId, requestParameters.from, requestParameters.to, options).then((request) => request(axios, basePath));
+        _1(requestParameters: CoachingApi1Request, options?: RawAxiosRequestConfig): AxiosPromise<CoachingMetrics> {
+            return localVarFp._1(requestParameters.workspaceId, requestParameters.managerId, requestParameters.from, requestParameters.to, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -151,46 +151,46 @@ export interface CoachingApiInterface {
     /**
      * List all of the coaching metrics of a manager.  When accessed through a Bearer token authorization method, this endpoint requires the scope \'api:coaching:read\'.
      * @summary List all coaching metrics (/v2/coaching)
-     * @param {CoachingApiListUsers1Request} requestParameters Request parameters.
+     * @param {CoachingApi1Request} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof CoachingApiInterface
      */
-    listUsers1(requestParameters: CoachingApiListUsers1Request, options?: RawAxiosRequestConfig): AxiosPromise<CoachingMetrics>;
+    _1(requestParameters: CoachingApi1Request, options?: RawAxiosRequestConfig): AxiosPromise<CoachingMetrics>;
 
 }
 
 /**
- * Request parameters for listUsers1 operation in CoachingApi.
+ * Request parameters for _1 operation in CoachingApi.
  * @export
- * @interface CoachingApiListUsers1Request
+ * @interface CoachingApi1Request
  */
-export interface CoachingApiListUsers1Request {
+export interface CoachingApi1Request {
     /**
      * 
      * @type {number}
-     * @memberof CoachingApiListUsers1
+     * @memberof CoachingApi1
      */
     readonly workspaceId: number
 
     /**
      * 
      * @type {number}
-     * @memberof CoachingApiListUsers1
+     * @memberof CoachingApi1
      */
     readonly managerId: number
 
     /**
      * Association time filter - only the associations made after that time will be listed. The time is in the ISO-8601 format (e.g., \&#39;2018-02-18T02:30:00-07:00\&#39; or \&#39;2018-02-18T08:00:00Z\&#39;, where Z stands for UTC); if not specified all association events will be listed.
      * @type {string}
-     * @memberof CoachingApiListUsers1
+     * @memberof CoachingApi1
      */
     readonly from: string
 
     /**
      * Association time filter - only the associations made after that time will be listed. The time is in the ISO-8601 format (e.g., \&#39;2018-02-18T02:30:00-07:00\&#39; or \&#39;2018-02-18T08:00:00Z\&#39;, where Z stands for UTC); if not specified all association events will be listed.
      * @type {string}
-     * @memberof CoachingApiListUsers1
+     * @memberof CoachingApi1
      */
     readonly to: string
 }
@@ -205,13 +205,13 @@ export class CoachingApi extends BaseAPI implements CoachingApiInterface {
     /**
      * List all of the coaching metrics of a manager.  When accessed through a Bearer token authorization method, this endpoint requires the scope \'api:coaching:read\'.
      * @summary List all coaching metrics (/v2/coaching)
-     * @param {CoachingApiListUsers1Request} requestParameters Request parameters.
+     * @param {CoachingApi1Request} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof CoachingApi
      */
-    public listUsers1(requestParameters: CoachingApiListUsers1Request, options?: RawAxiosRequestConfig) {
-        return CoachingApiFp(this.configuration).listUsers1(requestParameters.workspaceId, requestParameters.managerId, requestParameters.from, requestParameters.to, options).then((request) => request(this.axios, this.basePath));
+    public _1(requestParameters: CoachingApi1Request, options?: RawAxiosRequestConfig) {
+        return CoachingApiFp(this.configuration)._1(requestParameters.workspaceId, requestParameters.managerId, requestParameters.from, requestParameters.to, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

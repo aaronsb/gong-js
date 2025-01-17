@@ -10,5 +10,10 @@
   "npmVersion": "1.0.0",
   "snapshot": false,
   "nullSafeAdditionalProps": true,
-  "withInterfaces": true
+  "withInterfaces": true,
+  "useClassTransformer": true,
+  "useObjectParameters": true,
+  "removeOperationIdPrefix": true,
+  "useSingleRequestParameter": true,
+  "legacyDiscriminatorBehavior": false
 }
